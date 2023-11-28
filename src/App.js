@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <h1 style={{color:"red"}}>Netflix</h1>
-      <Banner/>
+      <Banner fetchurl={requests.fetchNetflixOriginals}/>
       <Row title="NetflixOriginal" fetchurl={requests.fetchNetflixOriginals}/>
       <Row title="TopRated" fetchurl={requests.fetchTopRated}/>
       <Row title="Trending" fetchurl={requests.fetchTrending}/>
@@ -15,10 +15,6 @@ function App() {
       <Row title="Horror" fetchurl={requests.fetchHorrorMovies}/>
       <Row title="Romance" fetchurl={requests.fetchRomanceMovies}/>
       <Row title="Documentaries" fetchurl={requests.fetchDocumentaries}/>
-
-
-
-
     </div>
   );
 }
