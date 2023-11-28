@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import instance from "../instance";
-
+import './Banner.css'
 function Banner({ fetchurl }) {
     const base_url = "https://image.tmdb.org/t/p/original";
     const [movieBanner, setMovieBanner] = useState()
@@ -17,7 +17,10 @@ function Banner({ fetchurl }) {
     return (
         <>
             <h1 style={{ color: "white" }}>banner</h1>
-            <img src={`${base_url}${movieBanner?.backdrop_path}`} alt="" />
+            <div className="banner">
+
+            </div>
+            <img className="banner-img" src={`${base_url}${movieBanner?.backdrop_path}`} alt="" />
 
         </>
     )
