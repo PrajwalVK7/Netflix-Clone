@@ -7,7 +7,18 @@ function App() {
     <div>
       <h1 style={{color:"red"}}>Netflix</h1>
       <Banner/>
-      <Row title="Netflix Original" fetchurl={requests.fetchNetflixOriginals}/>
+      <Row title="NetflixOriginal" fetchurl={requests.fetchNetflixOriginals}/>
+      <Row title="TopRated" fetchurl={requests.fetchTopRated}/>
+      <Row title="Trending" fetchurl={requests.fetchTrending}/>
+      <Row title="Action" fetchurl={requests.fetchActionMovies}/>
+      <Row title="Comedy" fetchurl={requests.fetchComedyMovies}/>
+      <Row title="Horror" fetchurl={requests.fetchHorrorMovies}/>
+      <Row title="Romance" fetchurl={requests.fetchRomanceMovies}/>
+      <Row title="Documentaries" fetchurl={requests.fetchDocumentaries}/>
+
+
+
+
     </div>
   );
 }
