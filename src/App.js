@@ -2,10 +2,11 @@ import './App.css';
 import Banner from './components/Banner';
 import Row from './components/Row';
 import requests from './requests';
+import Nav from './components/Nav';
 function App() {
   return (
     <div>
-      <h1 style={{color:"red"}}>Netflix</h1>
+      <Nav/>
       <Banner fetchurl={requests.fetchNetflixOriginals}/>
       <Row title="NetflixOriginal" fetchurl={requests.fetchNetflixOriginals}/>
       <Row title="TopRated" fetchurl={requests.fetchTopRated}/>
