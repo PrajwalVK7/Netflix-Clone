@@ -6,7 +6,9 @@
     padding-left: 0.3rem;
     padding-top: 0.6rem;
     z-index: 1;
+    background: transparent;
 }
 img{
     width: 160px;
+    background: transparent;
 }
