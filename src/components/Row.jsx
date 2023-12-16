@@ -6,13 +6,18 @@ function Row({ title, fetchurl }) {
 
     const [allMovies, setAllMovies] = useState();
     const base_url = "https://image.tmdb.org/t/p/original";  //for movie poster image
-    const fetchData = async () => {
-        const response = await instance.get(fetchurl);
-        setAllMovies(response.data.results)
-    }
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await instance.get(fetchurl);
+                setAllMovies(response.data.results);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            }
+        };
+    
         fetchData();
-    }, []);
+    }, [fetchurl]);
     console.log(allMovies)
 
     return (
