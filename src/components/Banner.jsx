@@ -5,15 +5,21 @@ function Banner({ fetchurl }) {
     const base_url = "https://image.tmdb.org/t/p/original";
     const [movieBanner, setMovieBanner] = useState()
 
-    const fetchData = async () => {
-        const { data } = await instance.get(fetchurl)
-        setMovieBanner(data.results[Math.floor(Math.random() * data.results.length)])
-    }
     useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const { data } = await instance.get(fetchurl);
+                setMovieBanner(data.results[Math.floor(Math.random() * data.results.length)]);
+            } catch (error) {
+                // Handle error
+                console.error("Error fetching data:", error);
+            }
+        };
+    
         fetchData();
-    }, []);
-    console.log("movie banner")
-    console.log(movieBanner)
+    }, [fetchurl]);
+    // console.log("movie banner")
+    // console.log(movieBanner)
     return (
         <>
             <div className="banner" style={{ backgroundImage: `url(${base_url}${movieBanner?.backdrop_path})` }}>
